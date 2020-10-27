@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.wiwidai</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0</version>
+  </parent>
+  <groupId>com.wiwidai</groupId>
+  <artifactId>mq</artifactId>
+  <version>1.0</version>
+  <name>mq</name>
+  <packaging>jar</packaging>
+  <url>https://www.wiwidai.com</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  
+   <dependency>
+    <groupId>com.rabbitmq</groupId>
+    <artifactId>amqp-client</artifactId>
+    <version>4.1.0</version>
+   </dependency>
+
+  </dependencies>
+  
+  	<build>
+		<finalName>wwd-mq</finalName>
+		<resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                  <!--   <exclude>servers/**</exclude> -->
+                </excludes>
+            </resource>
+        </resources>
+		<plugins> 
+			 <plugin>  
+		        <groupId>org.apache.maven.plugins</groupId>  
+		        <artifactId>maven-compiler-plugin</artifactId>  
+		        <version>2.3.2</version>  
+		        <configuration>  
+		            <source>1.8</source>  
+		            <target>1.8</target>  
+		            <encoding>UTF-8</encoding>
+		            <compilerArguments>  
+                        <verbose />  
+                        <bootclasspath>${java.home}\lib\rt.jar;${java.home}\lib\jce.jar</bootclasspath>  
+                    </compilerArguments>  
+		            <additionalConfig>  
+			         <file>  
+			            <name>.settings/org.eclipse.core.resources.prefs</name>  
+			            <content>  
+			               <![CDATA[eclipse.preferences.version=1${line.separator}encoding/<project>=UTF-8${line.separator}]]>  
+			            </content>  
+			         </file>  
+			      </additionalConfig>
+		        </configuration>  
+			 </plugin>
+	
+		</plugins>
+	</build>
+</project>
